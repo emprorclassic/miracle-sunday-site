@@ -1,6 +1,17 @@
 {
   "work": [
     {
+      "name": "ROGUE Fashion Store",
+      "type": "E‑commerce Website",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "A bold fashion e‑commerce website built around fast browsing and a smooth path to checkout.",
+      "image": "/images/rogue-fashion-store.webp",
+      "link": "#",
+      "fullPage": "/images/rogue-full.webp"
+    },
+    {
       "name": "Device Ring Health Dashboard",
       "type": "SaaS Dashboard",
       "tools": [
@@ -55,17 +66,6 @@
       ],
       "desc": "[One line about the Squarespace site and what you designed.]",
       "link": "#"
-    },
-    {
-      "name": "ROGUE Fashion Store",
-      "type": "E‑commerce Website",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "A bold fashion e‑commerce website built around fast browsing and a smooth path to checkout.",
-      "image": "/images/rogue-fashion-store.webp",
-      "link": "#",
-      "fullPage": "/images/rogue-full.webp"
     },
     {
       "name": "Jewelry Store Landing Page",
