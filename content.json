@@ -21,14 +21,16 @@
       "link": "#"
     },
     {
-      "name": "[Your WordPress + ACF project]",
-      "type": "Business Website",
+      "name": " Claudette's Café & Deli Website",
+      "type": "Restaurant Website",
       "tools": [
         "WordPress",
-        "ACF"
+        "Elementor"
       ],
-      "desc": "[One line about the site you built: who it was for and what it does.]",
-      "link": "#"
+      "desc": "Claudette's Café & Deli is a modern breakfast and deli website designed to give a local restaurant a warm, inviting, and easy-to-use online presence. ",
+      "image": "/images/173552fd-a8b1-4fd1-a13e-777d23f3a3c5.png",
+      "link": "https://claudettesdeli.com/",
+      "fullPage": "/images/76b143f3-f7b0-4589-8d82-10f95c925e72.webp"
     },
     {
       "name": "Telemedicine Booking App",
