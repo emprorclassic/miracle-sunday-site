@@ -211,7 +211,7 @@ html[data-theme="light"] .liquid{background:linear-gradient(135deg,rgba(255,255,
 .wcard{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;padding:24px 36px 24px 24px;border-radius:32px;transition:border-color .35s,opacity .9s var(--ease) var(--d,0s),transform .9s var(--ease) var(--d,0s)}
 .wcard:hover{border-color:var(--gold)}
 .wcard .media{height:300px;border-radius:24px;overflow:hidden}
-.wcard .media>*{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.wcard .media>*{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s var(--ease)}
 .wcard:hover .media>*{transform:scale(1.04)}
 .more{min-height:48px;padding:0 28px;border-radius:999px;border:1.5px solid var(--gold);background:transparent;color:var(--text);font:600 14px 'Outfit',sans-serif;cursor:pointer;transition:background-color .3s,color .3s}
 .more:hover{background:var(--gold);color:var(--on-gold)}
@@ -351,6 +351,28 @@ html[data-theme="light"] .mnav{background:linear-gradient(135deg,rgba(255,255,25
 .mind.stretch{animation:goo .6s ease}
 @keyframes goo{35%{scale:1.32 .84}70%{scale:.94 1.06}100%{scale:1 1}}
 
+/* =============== PROJECT VIEWER =============== */
+.media.can-open{position:relative;cursor:zoom-in}
+.media-hint{position:absolute;z-index:2;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,11,0.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);opacity:0;translate:0 6px;transition:opacity .35s,translate .35s var(--ease)}
+.media-hint .ico{width:14px;height:14px}
+.wcard:hover .media-hint,.media.can-open:focus-visible .media-hint{opacity:1;translate:0 0}
+@media (hover:none){.media-hint{opacity:1;translate:0 0}}
+.viewer{position:fixed;inset:0;z-index:150;display:flex;flex-direction:column;background:rgba(5,5,5,0.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;transition:opacity .4s var(--ease)}
+.viewer.open{opacity:1}
+.viewer-bar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;margin:14px auto 0;width:min(1200px,calc(100% - 28px));padding:10px 10px 10px 20px;border-radius:999px;color:var(--text);translate:0 -16px;transition:translate .5s var(--ease)}
+.viewer.open .viewer-bar{translate:0 0}
+.viewer-progress{width:min(1200px,calc(100% - 28px));height:3px;margin:10px auto 0;border-radius:3px;background:rgba(255,255,255,0.12);overflow:hidden}
+.viewer-progress i{display:block;height:100%;background:var(--gold);transform-origin:0 50%;transform:scaleX(0)}
+.viewer-body{flex:1;overflow:auto;overscroll-behavior:contain;padding:16px 14px 40px}
+.viewer-body img{display:block;width:min(1200px,100%);height:auto;margin:0 auto;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,0.5);opacity:0;scale:.97;transition:opacity .6s var(--ease),scale .6s var(--ease)}
+.viewer.open .viewer-body img.loaded{opacity:1;scale:1}
+.viewer-body iframe{display:block;width:min(1200px,100%);height:calc(100vh - 130px);margin:0 auto;border:0;border-radius:16px;background:#fff}
+.viewer-note{max-width:420px;margin:12vh auto 0;text-align:center;color:#F2EDE4;display:flex;flex-direction:column;gap:16px;align-items:center}
+.viewer-spin{width:34px;height:34px;margin:16vh auto 0;border-radius:50%;border:3px solid rgba(255,255,255,0.15);border-top-color:var(--gold);animation:vspin .8s linear infinite}
+@keyframes vspin{to{transform:rotate(360deg)}}
+html.viewer-on{overflow:hidden}
+@media (max-width:900px){.viewer-bar{border-radius:20px;padding:10px 10px 10px 16px}#viewerOpen{display:none}.viewer-body{padding:12px 8px 100px}.viewer-body img{border-radius:10px}}
+
 /* =============== PRELOADER =============== */
 html.is-loading{overflow:hidden}
 #preloader{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;background:var(--bg);transition:opacity .7s var(--ease),visibility .7s,translate .7s var(--ease)}
@@ -452,6 +474,8 @@ html.is-loading{overflow:hidden}
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"/><path d="M8 3.5v4M16 3.5v4M4 10h16M9 14.5l2 2 4-4"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M4 7l8 6 8-6"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0112 0v5l1.8 2H4.2zM10 21h4"/></symbol>
   <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
   <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/></symbol>
@@ -755,6 +779,20 @@ html.is-loading{overflow:hidden}
   </div>
 </footer>
 
+<!-- Full-page project viewer -->
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle" hidden>
+  <div class="viewer-bar liquid">
+    <div style="min-width:0"><div class="eyebrow" id="viewerType"></div><div class="disp" id="viewerTitle" style="font-size:18px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div></div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <a class="btn" id="viewerLive" target="_blank" rel="noopener" hidden>Live Site <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a class="btn-line" id="viewerOpen" target="_blank" rel="noopener">Open <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <button type="button" class="icon-btn round" id="viewerClose" aria-label="Close"><svg class="ico"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+  <div class="viewer-progress"><i id="viewerProg"></i></div>
+  <div class="viewer-body" id="viewerBody"></div>
+</div>
+
 <!-- Mobile liquid-glass tab bar -->
 <nav class="mnav" id="mnav" aria-label="Mobile">
   <span class="mind" id="mind" aria-hidden="true"></span>
@@ -843,15 +881,20 @@ function renderWork() {
   [...$('tabs').querySelectorAll('.tab')].forEach((b) => { const on = b.dataset.c === tab; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
   const list = tab === 'All' ? SITE.work : SITE.work.filter((w) => w.tools.includes(tab));
   const shown = showAll ? list : list.slice(0, 4);
-  $('work-list').innerHTML = shown.map((w, i) => `<article class="card wcard" data-reveal style="--d:${0.07 * (i % 4)}s">
-      <div class="media">${w.image ? `<img src="${esc(w.image)}" alt="${esc(w.name)}" loading="lazy">` : `<div class="ph">${icon((SITE.workTabs.find((t) => t.name === w.tools[w.tools.length - 1]) || { icon: 'grid' }).icon)}<span>[Project screenshot: ${esc(w.name)}]</span></div>`}</div>
+  $('work-list').innerHTML = shown.map((w, i) => { const live = w.link && w.link !== '#' && w.link.trim() !== '', full = (w.fullPage || '').trim(), idx = SITE.work.indexOf(w);
+    return `<article class="card wcard" data-reveal style="--d:${0.07 * (i % 4)}s">
+      <div class="media${full ? ' can-open' : ''}"${full ? ` data-view="${idx}" role="button" tabindex="0" aria-label="View the full ${esc(w.name)} design"` : ''}>${full ? `<span class="media-hint">${icon('expand')}Full design</span>` : ''}${w.image ? `<img src="${esc(w.image)}" alt="${esc(w.name)}" loading="lazy">` : `<div class="ph">${icon((SITE.workTabs.find((t) => t.name === w.tools[w.tools.length - 1]) || { icon: 'grid' }).icon)}<span>[Project screenshot: ${esc(w.name)}]</span></div>`}</div>
       <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
         <div class="eyebrow">${esc(w.type)}</div>
         <h3 class="disp" style="font-size:28px;font-weight:700;line-height:1.15">${esc(w.name)}</h3>
         <p class="lead" style="max-width:420px">${esc(w.desc)}</p>
         <div class="chips">${w.tools.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}</div>
-        <a class="btn" href="${esc(w.link)}"${ext(w.link)} style="margin-top:6px">View Project ${icon('arrow')}</a>
-      </div></article>`).join('');
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+          ${full ? `<button type="button" class="btn" data-view="${idx}">View Project ${icon('expand')}</button>` : ''}
+          ${live ? `<a class="${full ? 'btn-line' : 'btn'}" href="${esc(w.link)}" target="_blank" rel="noopener">${full ? 'Live Site' : 'View Live Site'} ${icon('arrow')}</a>` : ''}
+          ${!full && !live ? `<span class="chip" style="padding:8px 12px">Case study coming soon</span>` : ''}
+        </div>
+      </div></article>`; }).join('');
   $('moreBtn').parentElement.hidden = shown.length >= list.length;
   observeReveals($('work-list'));
 }
@@ -868,6 +911,35 @@ $('tabs').addEventListener('click', (e) => {
   b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduce ? 'auto' : 'smooth' });
 });
 $('moreBtn').addEventListener('click', () => { showAll = true; renderWork(); });
+/* full-page project viewer: long image scrolls in place, PDF shows in a frame (opens in a new tab on phones) */
+let lastFocus = null;
+function openViewer(idx) {
+  const w = SITE.work[idx]; if (!w) return; const file = (w.fullPage || '').trim(); if (!file) return;
+  const v = $('viewer'), body = $('viewerBody'), isPdf = /\.pdf($|\?)/i.test(file), phone = window.innerWidth <= 900;
+  if (isPdf && phone) { window.open(file, '_blank', 'noopener'); return; }
+  lastFocus = document.activeElement;
+  $('viewerTitle').textContent = w.name; $('viewerType').textContent = w.type || '';
+  $('viewerOpen').href = file;
+  const live = w.link && w.link !== '#' && w.link.trim() !== ''; $('viewerLive').hidden = !live; if (live) $('viewerLive').href = w.link;
+  body.scrollTop = 0; $('viewerProg').style.transform = 'scaleX(0)';
+  if (isPdf) body.innerHTML = `<iframe src="${esc(file)}#toolbar=0&view=FitH" title="${esc(w.name)} full design"></iframe>`;
+  else { body.innerHTML = '<div class="viewer-spin" aria-label="Loading"></div>'; const img = new Image(); img.alt = `${w.name} full page design`;
+    img.onload = () => { body.innerHTML = ''; body.appendChild(img); requestAnimationFrame(() => img.classList.add('loaded')); };
+    img.onerror = () => { body.innerHTML = `<div class="viewer-note"><p>This design could not load.</p></div>`; };
+    img.src = file; }
+  v.hidden = false; document.documentElement.classList.add('viewer-on');
+  requestAnimationFrame(() => v.classList.add('open')); $('viewerClose').focus();
+}
+function closeViewer() {
+  const v = $('viewer'); if (v.hidden) return; v.classList.remove('open'); document.documentElement.classList.remove('viewer-on');
+  setTimeout(() => { v.hidden = true; $('viewerBody').innerHTML = ''; }, 400); if (lastFocus) lastFocus.focus();
+}
+$('work-list').addEventListener('click', (e) => { const t = e.target.closest('[data-view]'); if (t) openViewer(+t.dataset.view); });
+$('work-list').addEventListener('keydown', (e) => { const t = e.target.closest('.media[data-view]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openViewer(+t.dataset.view); } });
+$('viewerClose').onclick = closeViewer;
+$('viewer').addEventListener('click', (e) => { if (e.target === $('viewer') || e.target === $('viewerBody')) closeViewer(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeViewer(); });
+$('viewerBody').addEventListener('scroll', () => { const b = $('viewerBody'); $('viewerProg').style.transform = `scaleX(${b.scrollTop / Math.max(1, b.scrollHeight - b.clientHeight)})`; }, { passive: true });
 
 /* reviews: auto-advance, pause on hover */
 let rev = 0, revTimer;
