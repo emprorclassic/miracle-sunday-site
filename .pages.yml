@@ -41,8 +41,11 @@ content:
             label: "Screenshot or mockup"
             type: "image"
           - name: "link"
-            label: "Link (Behance case study or live site)"
+            label: "Live site link (leave empty if there is no live site)"
             type: "string"
+          - name: "fullPage"
+            label: "Full page design (long image or PDF). View Project opens it on your site"
+            type: "file"
       - name: "courses"
         label: "Courses"
         type: "object"
@@ -317,3 +320,4 @@ content:
         label: "Note"
         type: "string"
         readonly: true
+ 
