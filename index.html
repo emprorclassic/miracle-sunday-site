@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" class="is-loading">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,9 @@
 (function(){var t;try{t=localStorage.getItem('ms-theme')}catch(e){}
 if(!t)t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
 document.documentElement.setAttribute('data-theme',t)})();
+window.__plStart=performance.now();
+/* fail-safe: never keep the preloader longer than 8 seconds */
+setTimeout(function(){var p=document.getElementById('preloader');if(p){p.classList.add('done');document.documentElement.classList.remove('is-loading');}},8000);
 </script>
 <link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -348,6 +351,16 @@ html[data-theme="light"] .mnav{background:linear-gradient(135deg,rgba(255,255,25
 .mind.stretch{animation:goo .6s ease}
 @keyframes goo{35%{scale:1.32 .84}70%{scale:.94 1.06}100%{scale:1 1}}
 
+/* =============== PRELOADER =============== */
+html.is-loading{overflow:hidden}
+#preloader{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;background:var(--bg);transition:opacity .7s var(--ease),visibility .7s,translate .7s var(--ease)}
+#preloader img{width:min(320px,72vw);height:auto;display:block}
+#preloader .pl-bar{width:min(180px,46vw);height:3px;border-radius:3px;background:var(--line);overflow:hidden}
+#preloader .pl-bar i{display:block;height:100%;width:100%;border-radius:inherit;background:var(--gold);transform-origin:0 50%;animation:plFill 2.2s var(--ease) forwards}
+@keyframes plFill{from{transform:scaleX(0)}to{transform:scaleX(.92)}}
+#preloader.done{opacity:0;visibility:hidden;translate:0 -24px;pointer-events:none}
+#preloader.done .pl-bar i{animation:none;transform:scaleX(1)}
+
 /* =============== MOTION =============== */
 [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease) var(--d,0s),transform .9s var(--ease) var(--d,0s)}
 [data-reveal="left"]{transform:translateX(-36px)}
@@ -425,6 +438,8 @@ html[data-theme="light"] .mnav{background:linear-gradient(135deg,rgba(255,255,25
 </style>
 </head>
 <body>
+<!-- Preloader: your animated logo shows while the site loads -->
+<div id="preloader" aria-hidden="true"><img src="images/preloader.webp" alt="" fetchpriority="high"><div class="pl-bar"><i></i></div></div>
 <div class="progress" id="progress"></div>
 
 <!-- SVG icon set (generic icons; swap in official brand icons later if you like) -->
@@ -764,7 +779,7 @@ let SITE;
 fetch('content.json', { cache: 'no-cache' })
   .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then((data) => { SITE = data; start(); })
-  .catch(() => { document.body.insertAdjacentHTML('afterbegin', '<p style="position:fixed;z-index:99;inset:auto 16px 16px 16px;padding:14px 18px;border-radius:12px;background:#D4882A;color:#0B0B0B;font:600 14px Outfit,sans-serif">The site content could not load. Open the site from its web address (not by double-clicking the file) to see everything.</p>'); });
+  .catch(() => { var p = document.getElementById('preloader'); if (p) p.classList.add('done'); document.documentElement.classList.remove('is-loading'); document.body.insertAdjacentHTML('afterbegin', '<p style="position:fixed;z-index:99;inset:auto 16px 16px 16px;padding:14px 18px;border-radius:12px;background:#D4882A;color:#0B0B0B;font:600 14px Outfit,sans-serif">The site content could not load. Open the site from its web address (not by double-clicking the file) to see everything.</p>'); });
 
 function start() {
 
@@ -1004,7 +1019,18 @@ document.querySelectorAll('[data-theme-toggle]').forEach((b) => b.addEventListen
 document.querySelectorAll('[data-set-theme]').forEach((b) => b.addEventListener('click', (e) => setTheme(b.dataset.setTheme, e)));
 
 /* start */
-renderWork(); observeReveals(); onScroll(); moveInd(); moveMind(false); moveTind(false); moveKnob(); wireWhatsApp();
+/* hide the preloader once the page is ready (shown at least 2.2s so the logo animation is seen), then start the scroll animations */
+function finishLoad() {
+  const t0 = window.__plStart || 0, wait = Math.max(0, 2200 - (performance.now() - t0));
+  const go = () => setTimeout(() => {
+    const pl = document.getElementById('preloader'); if (pl) pl.classList.add('done');
+    document.documentElement.classList.remove('is-loading');
+    setTimeout(observeReveals, 250);
+    setTimeout(() => pl && pl.remove(), 900);
+  }, wait);
+  if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true });
+}
+renderWork(); finishLoad(); onScroll(); moveInd(); moveMind(false); moveTind(false); moveKnob(); wireWhatsApp();
 let lastPP = perPage();
 window.addEventListener('resize', () => { if (perPage() !== lastPP) { lastPP = perPage(); renderCourses(); } renderServices(); moveInd(); moveMind(false); moveTind(false); moveKnob(); onScroll(); });
 if (document.fonts) document.fonts.ready.then(() => { moveInd(); moveMind(false); moveTind(false); moveKnob(); renderServices(); });
