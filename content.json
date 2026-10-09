@@ -12,13 +12,23 @@
       "fullPage": "/images/rogue-full.webp"
     },
     {
+      "name": "Natufaglow Ecommerce Figma UI/UX Landing Page Design",
+      "type": "E‑commerce Store",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "[One line about the store: products, theme work and what you set up.]",
+      "link": "#"
+    },
+    {
       "name": "Device Ring Health Dashboard",
       "type": "SaaS Dashboard",
       "tools": [
         "Figma"
       ],
       "desc": "A health tech SaaS dashboard that turns wearable ring data into clear, readable daily insights.",
-      "link": "#"
+      "link": "#",
+      "fullPage": "/images/76b143f3-f7b0-4589-8d82-10f95c925e72.webp"
     },
     {
       "name": " Claudette's Café & Deli Website",
@@ -39,15 +49,6 @@
         "Figma"
       ],
       "desc": "Find, compare and book trusted doctors in seconds, with real‑time availability, verified profiles and transparent pricing.",
-      "link": "#"
-    },
-    {
-      "name": "[Your Shopify store]",
-      "type": "E‑commerce Store",
-      "tools": [
-        "Shopify"
-      ],
-      "desc": "[One line about the store: products, theme work and what you set up.]",
       "link": "#"
     },
     {
