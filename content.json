@@ -367,7 +367,7 @@
     {
       "name": "WhatsApp",
       "icon": "whatsapp",
-      "url": "2348112660481"
+      "url": "https://api.whatsapp.com/send/?phone=2348112660481&text=Hi+Miracle%2C+I+found+you+on+your+website+and+I%27d+like+to+talk+about+a+project.&type=phone_number&app_absent=0"
     },
     {
       "name": "Fiverr",
