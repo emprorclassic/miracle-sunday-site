@@ -1,111 +1,236 @@
 {
-  "_note": "Edit this file from the Pages CMS dashboard. Each section below fills one part of the website.",
-  "whatsapp": "[YOUR_WHATSAPP_NUMBER]",
-  "whatsappMessage": "Hi Miracle, I found you on your website and I'd like to talk about a project.",
-  "email": "miraclesundaytolulope@gmail.com",
-  "bookingUrl": "",
-  "platforms": [
+  "work": [
     {
-      "name": "Fiverr",
-      "icon": "fiverr",
-      "note": "5.0 ★ (9)",
-      "url": "https://www.fiverr.com/miracle_sunday_"
+      "name": "Device Ring Health Dashboard",
+      "type": "SaaS Dashboard",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "A health tech SaaS dashboard that turns wearable ring data into clear, readable daily insights.",
+      "link": "#"
     },
     {
-      "name": "Upwork",
-      "icon": "upwork",
-      "note": "5.0 ★ Verified",
-      "url": "https://www.upwork.com/freelancers/~014f445c88cefac9b0"
+      "name": "[Your WordPress + ACF project]",
+      "type": "Business Website",
+      "tools": [
+        "WordPress",
+        "ACF"
+      ],
+      "desc": "[One line about the site you built: who it was for and what it does.]",
+      "link": "#"
     },
     {
-      "name": "Kwork",
-      "icon": "kwork",
-      "note": "Hire me",
-      "url": "https://kwork.com/user/miraclesunday"
+      "name": "Telemedicine Booking App",
+      "type": "Mobile App",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "Find, compare and book trusted doctors in seconds, with real‑time availability, verified profiles and transparent pricing.",
+      "link": "#"
     },
     {
-      "name": "Behance",
-      "icon": "layers",
-      "note": "Case studies",
-      "url": "https://www.behance.net/miracle_sunday"
+      "name": "[Your Shopify store]",
+      "type": "E‑commerce Store",
+      "tools": [
+        "Shopify"
+      ],
+      "desc": "[One line about the store: products, theme work and what you set up.]",
+      "link": "#"
+    },
+    {
+      "name": "[Your Elementor website]",
+      "type": "Website",
+      "tools": [
+        "WordPress",
+        "Elementor"
+      ],
+      "desc": "[One line about the Elementor build and the result for the client.]",
+      "link": "#"
+    },
+    {
+      "name": "[Your Squarespace website]",
+      "type": "Website",
+      "tools": [
+        "Squarespace"
+      ],
+      "desc": "[One line about the Squarespace site and what you designed.]",
+      "link": "#"
+    },
+    {
+      "name": "ROGUE Fashion Store",
+      "type": "E‑commerce Website",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "A bold fashion e‑commerce website built around fast browsing and a smooth path to checkout.",
+      "link": "#"
+    },
+    {
+      "name": "Jewelry Store Landing Page",
+      "type": "Landing Page",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "A premium e‑commerce landing header designed to show off the product and drive the first click.",
+      "link": "#"
+    },
+    {
+      "name": "Skincare Beauty App",
+      "type": "Mobile App",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "A beauty and skincare mobile app with a calm, product‑first shopping experience.",
+      "link": "#"
+    },
+    {
+      "name": "Meditation & Mood Tracker",
+      "type": "Mobile App · Concept",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "Onboarding through to a quick mood‑log flow, delivered as a clickable prototype.",
+      "link": "#"
+    },
+    {
+      "name": "AR Glasses Landing Page",
+      "type": "Landing Page · Concept",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "A responsive product landing page for next‑generation AR glasses.",
+      "link": "#"
+    },
+    {
+      "name": "Eco‑Tech Exhibition Website",
+      "type": "Website · Concept",
+      "tools": [
+        "Figma"
+      ],
+      "desc": "Web design and visual direction for a sustainability tech exhibition.",
+      "link": "#"
     }
   ],
-  "socials": [
+  "courses": [
     {
-      "name": "WhatsApp",
-      "icon": "whatsapp",
-      "url": "WHATSAPP"
+      "title": "Figma From Zero to Pro",
+      "level": "Beginner",
+      "lessons": "[LESSONS]",
+      "hours": "[HOURS]",
+      "price": "[PRICE]",
+      "status": "Coming soon",
+      "link": "WHATSAPP",
+      "icon": "figma"
     },
     {
-      "name": "Fiverr",
-      "icon": "fiverr",
-      "url": "https://www.fiverr.com/miracle_sunday_"
+      "title": "SaaS Dashboard Design in Figma",
+      "level": "Intermediate",
+      "lessons": "[LESSONS]",
+      "hours": "[HOURS]",
+      "price": "[PRICE]",
+      "status": "Coming soon",
+      "link": "WHATSAPP",
+      "icon": "grid"
     },
     {
-      "name": "Upwork",
-      "icon": "upwork",
-      "url": "https://www.upwork.com/freelancers/~014f445c88cefac9b0"
+      "title": "WordPress With Elementor & ACF",
+      "level": "Intermediate",
+      "lessons": "[LESSONS]",
+      "hours": "[HOURS]",
+      "price": "[PRICE]",
+      "status": "Coming soon",
+      "link": "WHATSAPP",
+      "icon": "wp"
     },
     {
-      "name": "Kwork",
-      "icon": "kwork",
-      "url": "https://kwork.com/user/miraclesunday"
+      "title": "Design Systems With Variables",
+      "level": "Advanced",
+      "lessons": "[LESSONS]",
+      "hours": "[HOURS]",
+      "price": "[PRICE]",
+      "status": "Coming soon",
+      "link": "WHATSAPP",
+      "icon": "layers"
     },
     {
-      "name": "Behance",
-      "icon": "layers",
-      "url": "https://www.behance.net/miracle_sunday"
+      "title": "Build a Shopify Store That Sells",
+      "level": "Beginner",
+      "lessons": "[LESSONS]",
+      "hours": "[HOURS]",
+      "price": "[PRICE]",
+      "status": "Coming soon",
+      "link": "WHATSAPP",
+      "icon": "cart"
     },
     {
-      "name": "Email",
-      "icon": "mail",
-      "url": "mailto:miraclesundaytolulope@gmail.com"
-    },
-    {
-      "name": "Instagram",
-      "icon": "camera",
-      "url": "#"
-    },
-    {
-      "name": "GitHub",
-      "icon": "code",
-      "url": "#"
+      "title": "Freelancing as a UI/UX Designer",
+      "level": "All levels",
+      "lessons": "[LESSONS]",
+      "hours": "[HOURS]",
+      "price": "[PRICE]",
+      "status": "Coming soon",
+      "link": "WHATSAPP",
+      "icon": "pen"
     }
   ],
-  "tags": [
-    "UI/UX Design",
-    "Web Design",
-    "UI Design Figma",
-    "WordPress & Shopify"
-  ],
-  "tools": [
-    "Figma",
-    "WordPress",
-    "Elementor",
-    "ACF",
-    "Shopify",
-    "Squarespace",
-    "Webflow",
-    "Prototyping",
-    "Design Systems",
-    "UX Research"
-  ],
-  "stats": [
+  "reviews": [
     {
-      "value": 4,
-      "suffix": "+",
-      "label": "Years designing digital products"
+      "name": "novapdflab",
+      "country": "France",
+      "project": "Website UI/UX",
+      "quote": "This was the best designer I’ve ever worked with. He is patient and kind, he patiently managed my request and delivered a top quality output."
     },
     {
-      "value": 5,
-      "decimals": 1,
-      "suffix": "★",
-      "label": "Average rating across every client review"
+      "name": "anna_kellery",
+      "country": "Germany",
+      "project": "Website UI/UX",
+      "quote": "The screens came out better than I had in my head. The spacing, the flow, and how it guides your eye down the page felt very intentional. Guy knows what he’s doing."
     },
     {
-      "value": 1,
-      "suffix": " hr",
-      "label": "Average response time"
+      "name": "mark_turner20",
+      "country": "United States",
+      "project": "Landing page",
+      "quote": "He created the landing page prototype exactly how I wanted without any stress. Communication was clear the whole time, updates were fast and the final results looked clean and professional."
+    },
+    {
+      "name": "mercier_n",
+      "country": "France",
+      "project": "Landing page",
+      "quote": "His creativity and professionalism helped us improve my landing page visual appeal, beyond templates and pre‑made layouts."
+    },
+    {
+      "name": "kevin2lane",
+      "country": "United States",
+      "project": "App screens",
+      "quote": "Absolutely nailed it. Even with few details he was able to handle the final design, and feedback was handled professionally."
+    },
+    {
+      "name": "mathews_l",
+      "country": "United Kingdom",
+      "project": "Website UI/UX",
+      "quote": "Miracle truly exceeded my expectations with his stellar professionalism and dedication. Working with him was a breeze."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What services do you offer?",
+      "a": "Figma UI/UX for SaaS dashboards, mobile apps, websites and landing pages, design systems and UX audits. I also build sites in WordPress (Elementor and ACF), Shopify and Squarespace."
+    },
+    {
+      "q": "What tools do you use?",
+      "a": "Figma for design and prototyping. For live sites I use WordPress with Elementor and ACF, Shopify and Squarespace, depending on what fits your business."
+    },
+    {
+      "q": "How long does a project take?",
+      "a": "Smaller website and app screens usually take 2 to 5 days. Larger products take 1 to 4 weeks, and we agree on the timeline before we start."
+    },
+    {
+      "q": "Can you redesign my existing site or file?",
+      "a": "Yes. I redesign outdated interfaces and can move designs from Framer, WordPress, Weebly or Adobe XD into a modern Figma system, then rebuild the site if you need it."
+    },
+    {
+      "q": "How do I get started?",
+      "a": "Message me on WhatsApp or send me a link to your app, website or Figma file. I’ll reply within an hour with 3 specific UX improvements, free."
     }
   ],
   "services": [
@@ -184,6 +309,102 @@
       "body": "Refinements and an organized, developer‑ready handoff."
     }
   ],
+  "stats": [
+    {
+      "value": 4,
+      "suffix": "+",
+      "label": "Years designing digital products"
+    },
+    {
+      "value": 5,
+      "decimals": 1,
+      "suffix": "★",
+      "label": "Average rating across every client review"
+    },
+    {
+      "value": 1,
+      "suffix": " hr",
+      "label": "Average response time"
+    }
+  ],
+  "tags": [
+    "UI/UX Design",
+    "Web Design",
+    "UI Design Figma",
+    "WordPress & Shopify"
+  ],
+  "whatsapp": "08112660481",
+  "whatsappMessage": "Hi Miracle, I found you on your website and I'd like to talk about a project.",
+  "email": "miraclesundaytolulope@gmail.com",
+  "bookingUrl": "https://calendly.com/miraclesundaytolulope/30min",
+  "platforms": [
+    {
+      "name": "Fiverr",
+      "icon": "fiverr",
+      "note": "5.0 ★ (9)",
+      "url": "https://www.fiverr.com/miracle_sunday_"
+    },
+    {
+      "name": "Upwork",
+      "icon": "upwork",
+      "note": "5.0 ★ Verified",
+      "url": "https://www.upwork.com/freelancers/~014f445c88cefac9b0"
+    },
+    {
+      "name": "Kwork",
+      "icon": "kwork",
+      "note": "Hire me",
+      "url": "https://kwork.com/user/miraclesunday"
+    },
+    {
+      "name": "Behance",
+      "icon": "layers",
+      "note": "Case studies",
+      "url": "https://www.behance.net/miracle_sunday"
+    }
+  ],
+  "socials": [
+    {
+      "name": "WhatsApp",
+      "icon": "whatsapp",
+      "url": "WHATSAPP"
+    },
+    {
+      "name": "Fiverr",
+      "icon": "fiverr",
+      "url": "https://www.fiverr.com/miracle_sunday_"
+    },
+    {
+      "name": "Upwork",
+      "icon": "upwork",
+      "url": "https://www.upwork.com/freelancers/~014f445c88cefac9b0"
+    },
+    {
+      "name": "Kwork",
+      "icon": "kwork",
+      "url": "https://kwork.com/user/miraclesunday"
+    },
+    {
+      "name": "Behance",
+      "icon": "layers",
+      "url": "https://www.behance.net/miracle_sunday"
+    },
+    {
+      "name": "Email",
+      "icon": "mail",
+      "url": "mailto:miraclesundaytolulope@gmail.com"
+    },
+    {
+      "name": "Instagram",
+      "icon": "camera",
+      "url": "#"
+    },
+    {
+      "name": "GitHub",
+      "icon": "code",
+      "url": "#"
+    }
+  ],
   "workTabs": [
     {
       "name": "All",
@@ -214,257 +435,17 @@
       "icon": "square"
     }
   ],
-  "work": [
-    {
-      "name": "Device Ring Health Dashboard",
-      "type": "SaaS Dashboard",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "A health tech SaaS dashboard that turns wearable ring data into clear, readable daily insights.",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "[Your WordPress + ACF project]",
-      "type": "Business Website",
-      "tools": [
-        "WordPress",
-        "ACF"
-      ],
-      "desc": "[One line about the site you built: who it was for and what it does.]",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "Telemedicine Booking App",
-      "type": "Mobile App",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "Find, compare and book trusted doctors in seconds, with real‑time availability, verified profiles and transparent pricing.",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "[Your Shopify store]",
-      "type": "E‑commerce Store",
-      "tools": [
-        "Shopify"
-      ],
-      "desc": "[One line about the store: products, theme work and what you set up.]",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "[Your Elementor website]",
-      "type": "Website",
-      "tools": [
-        "WordPress",
-        "Elementor"
-      ],
-      "desc": "[One line about the Elementor build and the result for the client.]",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "[Your Squarespace website]",
-      "type": "Website",
-      "tools": [
-        "Squarespace"
-      ],
-      "desc": "[One line about the Squarespace site and what you designed.]",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "ROGUE Fashion Store",
-      "type": "E‑commerce Website",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "A bold fashion e‑commerce website built around fast browsing and a smooth path to checkout.",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "Jewelry Store Landing Page",
-      "type": "Landing Page",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "A premium e‑commerce landing header designed to show off the product and drive the first click.",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "Skincare Beauty App",
-      "type": "Mobile App",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "A beauty and skincare mobile app with a calm, product‑first shopping experience.",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "Meditation & Mood Tracker",
-      "type": "Mobile App · Concept",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "Onboarding through to a quick mood‑log flow, delivered as a clickable prototype.",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "AR Glasses Landing Page",
-      "type": "Landing Page · Concept",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "A responsive product landing page for next‑generation AR glasses.",
-      "image": "",
-      "link": "#"
-    },
-    {
-      "name": "Eco‑Tech Exhibition Website",
-      "type": "Website · Concept",
-      "tools": [
-        "Figma"
-      ],
-      "desc": "Web design and visual direction for a sustainability tech exhibition.",
-      "image": "",
-      "link": "#"
-    }
+  "tools": [
+    "Figma",
+    "WordPress",
+    "Elementor",
+    "ACF",
+    "Shopify",
+    "Squarespace",
+    "Webflow",
+    "Prototyping",
+    "Design Systems",
+    "UX Research"
   ],
-  "reviews": [
-    {
-      "name": "novapdflab",
-      "country": "France",
-      "project": "Website UI/UX",
-      "quote": "This was the best designer I’ve ever worked with. He is patient and kind, he patiently managed my request and delivered a top quality output."
-    },
-    {
-      "name": "anna_kellery",
-      "country": "Germany",
-      "project": "Website UI/UX",
-      "quote": "The screens came out better than I had in my head. The spacing, the flow, and how it guides your eye down the page felt very intentional. Guy knows what he’s doing."
-    },
-    {
-      "name": "mark_turner20",
-      "country": "United States",
-      "project": "Landing page",
-      "quote": "He created the landing page prototype exactly how I wanted without any stress. Communication was clear the whole time, updates were fast and the final results looked clean and professional."
-    },
-    {
-      "name": "mercier_n",
-      "country": "France",
-      "project": "Landing page",
-      "quote": "His creativity and professionalism helped us improve my landing page visual appeal, beyond templates and pre‑made layouts."
-    },
-    {
-      "name": "kevin2lane",
-      "country": "United States",
-      "project": "App screens",
-      "quote": "Absolutely nailed it. Even with few details he was able to handle the final design, and feedback was handled professionally."
-    },
-    {
-      "name": "mathews_l",
-      "country": "United Kingdom",
-      "project": "Website UI/UX",
-      "quote": "Miracle truly exceeded my expectations with his stellar professionalism and dedication. Working with him was a breeze."
-    }
-  ],
-  "faqs": [
-    {
-      "q": "What services do you offer?",
-      "a": "Figma UI/UX for SaaS dashboards, mobile apps, websites and landing pages, design systems and UX audits. I also build sites in WordPress (Elementor and ACF), Shopify and Squarespace."
-    },
-    {
-      "q": "What tools do you use?",
-      "a": "Figma for design and prototyping. For live sites I use WordPress with Elementor and ACF, Shopify and Squarespace, depending on what fits your business."
-    },
-    {
-      "q": "How long does a project take?",
-      "a": "Smaller website and app screens usually take 2 to 5 days. Larger products take 1 to 4 weeks, and we agree on the timeline before we start."
-    },
-    {
-      "q": "Can you redesign my existing site or file?",
-      "a": "Yes. I redesign outdated interfaces and can move designs from Framer, WordPress, Weebly or Adobe XD into a modern Figma system, then rebuild the site if you need it."
-    },
-    {
-      "q": "How do I get started?",
-      "a": "Message me on WhatsApp or send me a link to your app, website or Figma file. I’ll reply within an hour with 3 specific UX improvements, free."
-    }
-  ],
-  "courses": [
-    {
-      "lessons": "[LESSONS]",
-      "hours": "[HOURS]",
-      "price": "[PRICE]",
-      "status": "Coming soon",
-      "link": "WHATSAPP",
-      "title": "Figma From Zero to Pro",
-      "level": "Beginner",
-      "icon": "figma",
-      "image": ""
-    },
-    {
-      "lessons": "[LESSONS]",
-      "hours": "[HOURS]",
-      "price": "[PRICE]",
-      "status": "Coming soon",
-      "link": "WHATSAPP",
-      "title": "SaaS Dashboard Design in Figma",
-      "level": "Intermediate",
-      "icon": "grid",
-      "image": ""
-    },
-    {
-      "lessons": "[LESSONS]",
-      "hours": "[HOURS]",
-      "price": "[PRICE]",
-      "status": "Coming soon",
-      "link": "WHATSAPP",
-      "title": "WordPress With Elementor & ACF",
-      "level": "Intermediate",
-      "icon": "wp",
-      "image": ""
-    },
-    {
-      "lessons": "[LESSONS]",
-      "hours": "[HOURS]",
-      "price": "[PRICE]",
-      "status": "Coming soon",
-      "link": "WHATSAPP",
-      "title": "Design Systems With Variables",
-      "level": "Advanced",
-      "icon": "layers",
-      "image": ""
-    },
-    {
-      "lessons": "[LESSONS]",
-      "hours": "[HOURS]",
-      "price": "[PRICE]",
-      "status": "Coming soon",
-      "link": "WHATSAPP",
-      "title": "Build a Shopify Store That Sells",
-      "level": "Beginner",
-      "icon": "cart",
-      "image": ""
-    },
-    {
-      "lessons": "[LESSONS]",
-      "hours": "[HOURS]",
-      "price": "[PRICE]",
-      "status": "Coming soon",
-      "link": "WHATSAPP",
-      "title": "Freelancing as a UI/UX Designer",
-      "level": "All levels",
-      "icon": "pen",
-      "image": ""
-    }
-  ],
-  "contactFormKey": ""
+  "_note": "Edit this file from the Pages CMS dashboard. Each section below fills one part of the website."
 }
