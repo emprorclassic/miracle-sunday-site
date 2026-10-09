@@ -211,8 +211,8 @@ html[data-theme="light"] .liquid{background:linear-gradient(135deg,rgba(255,255,
 .wcard{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;padding:24px 36px 24px 24px;border-radius:32px;transition:border-color .35s,opacity .9s var(--ease) var(--d,0s),transform .9s var(--ease) var(--d,0s)}
 .wcard:hover{border-color:var(--gold)}
 .wcard .media{height:300px;border-radius:24px;overflow:hidden}
-.wcard .media>*{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s var(--ease)}
-.wcard:hover .media>*{transform:scale(1.04)}
+.wcard .media>img,.wcard .media>.ph{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s var(--ease)}
+.wcard:hover .media>img,.wcard:hover .media>.ph{transform:scale(1.04)}
 .more{min-height:48px;padding:0 28px;border-radius:999px;border:1.5px solid var(--gold);background:transparent;color:var(--text);font:600 14px 'Outfit',sans-serif;cursor:pointer;transition:background-color .3s,color .3s}
 .more:hover{background:var(--gold);color:var(--on-gold)}
 
@@ -353,7 +353,9 @@ html[data-theme="light"] .mnav{background:linear-gradient(135deg,rgba(255,255,25
 
 /* =============== PROJECT VIEWER =============== */
 .media.can-open{position:relative;cursor:zoom-in}
-.media-hint{position:absolute;z-index:2;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,11,0.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);opacity:0;translate:0 6px;transition:opacity .35s,translate .35s var(--ease)}
+.media.can-open::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(11,11,11,0.45),transparent 45%);opacity:0;transition:opacity .4s}
+.wcard:hover .media.can-open::after{opacity:1}
+.media-hint{position:absolute;z-index:2;right:14px;bottom:14px;width:auto;height:auto;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,11,0.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);opacity:0;translate:0 6px;transition:opacity .35s,translate .35s var(--ease)}
 .media-hint .ico{width:14px;height:14px}
 .wcard:hover .media-hint,.media.can-open:focus-visible .media-hint{opacity:1;translate:0 0}
 @media (hover:none){.media-hint{opacity:1;translate:0 0}}
@@ -371,7 +373,7 @@ html[data-theme="light"] .mnav{background:linear-gradient(135deg,rgba(255,255,25
 .viewer-spin{width:34px;height:34px;margin:16vh auto 0;border-radius:50%;border:3px solid rgba(255,255,255,0.15);border-top-color:var(--gold);animation:vspin .8s linear infinite}
 @keyframes vspin{to{transform:rotate(360deg)}}
 html.viewer-on{overflow:hidden}
-@media (max-width:900px){.viewer-bar{border-radius:20px;padding:10px 10px 10px 16px}#viewerOpen{display:none}.viewer-body{padding:12px 8px 100px}.viewer-body img{border-radius:10px}}
+@media (max-width:900px){.viewer-bar{border-radius:20px;padding:10px 10px 10px 16px}#viewerLive{padding:0 14px}.viewer-body{padding:12px 8px 100px}.viewer-body img{border-radius:10px}}
 
 /* =============== PRELOADER =============== */
 html.is-loading{overflow:hidden}
@@ -785,7 +787,6 @@ html.is-loading{overflow:hidden}
     <div style="min-width:0"><div class="eyebrow" id="viewerType"></div><div class="disp" id="viewerTitle" style="font-size:18px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div></div>
     <div style="display:flex;gap:8px;align-items:center">
       <a class="btn" id="viewerLive" target="_blank" rel="noopener" hidden>Live Site <svg class="ico"><use href="#i-arrow"/></svg></a>
-      <a class="btn-line" id="viewerOpen" target="_blank" rel="noopener">Open <svg class="ico"><use href="#i-arrow"/></svg></a>
       <button type="button" class="icon-btn round" id="viewerClose" aria-label="Close"><svg class="ico"><use href="#i-close"/></svg></button>
     </div>
   </div>
@@ -883,7 +884,7 @@ function renderWork() {
   const shown = showAll ? list : list.slice(0, 4);
   $('work-list').innerHTML = shown.map((w, i) => { const live = w.link && w.link !== '#' && w.link.trim() !== '', full = (w.fullPage || '').trim(), idx = SITE.work.indexOf(w);
     return `<article class="card wcard" data-reveal style="--d:${0.07 * (i % 4)}s">
-      <div class="media${full ? ' can-open' : ''}"${full ? ` data-view="${idx}" role="button" tabindex="0" aria-label="View the full ${esc(w.name)} design"` : ''}>${full ? `<span class="media-hint">${icon('expand')}Full design</span>` : ''}${w.image ? `<img src="${esc(w.image)}" alt="${esc(w.name)}" loading="lazy">` : `<div class="ph">${icon((SITE.workTabs.find((t) => t.name === w.tools[w.tools.length - 1]) || { icon: 'grid' }).icon)}<span>[Project screenshot: ${esc(w.name)}]</span></div>`}</div>
+      <div class="media${full ? ' can-open' : ''}"${full ? ` data-view="${idx}" role="button" tabindex="0" aria-label="View the full ${esc(w.name)} design"` : ''}>${full ? `<span class="media-hint">${icon('expand')}View full design</span>` : ''}${w.image ? `<img src="${esc(w.image)}" alt="${esc(w.name)}" loading="lazy">` : `<div class="ph">${icon((SITE.workTabs.find((t) => t.name === w.tools[w.tools.length - 1]) || { icon: 'grid' }).icon)}<span>[Project screenshot: ${esc(w.name)}]</span></div>`}</div>
       <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
         <div class="eyebrow">${esc(w.type)}</div>
         <h3 class="disp" style="font-size:28px;font-weight:700;line-height:1.15">${esc(w.name)}</h3>
@@ -919,7 +920,6 @@ function openViewer(idx) {
   if (isPdf && phone) { window.open(file, '_blank', 'noopener'); return; }
   lastFocus = document.activeElement;
   $('viewerTitle').textContent = w.name; $('viewerType').textContent = w.type || '';
-  $('viewerOpen').href = file;
   const live = w.link && w.link !== '#' && w.link.trim() !== ''; $('viewerLive').hidden = !live; if (live) $('viewerLive').href = w.link;
   body.scrollTop = 0; $('viewerProg').style.transform = 'scaleX(0)';
   if (isPdf) body.innerHTML = `<iframe src="${esc(file)}#toolbar=0&view=FitH" title="${esc(w.name)} full design"></iframe>`;
