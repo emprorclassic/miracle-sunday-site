@@ -63,7 +63,9 @@
         "Figma"
       ],
       "desc": "A bold fashion e‑commerce website built around fast browsing and a smooth path to checkout.",
-      "link": "#"
+      "image": "/images/rogue-fashion-store.webp",
+      "link": "#",
+      "fullPage": "/images/rogue-full.webp"
     },
     {
       "name": "Jewelry Store Landing Page",
